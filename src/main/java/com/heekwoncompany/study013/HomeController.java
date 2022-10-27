@@ -37,4 +37,36 @@ public class HomeController {
 		
 		return "checkId";
 	}
+	
+	@RequestMapping(value = "/join")
+	public String join() {
+	
+		return "join";
+	}
+	
+//	@RequestMapping(value = "/joinOk")
+//	public String joinCheck(HttpServletRequest request, Model model) {
+//		
+//		String mid = request.getParameter("id");
+//		String mpw = request.getParameter("pw");
+//		String mname = request.getParameter("name");
+//		String memail = request.getParameter("email");
+//		
+//		MemberDto member = new MemberDto(mid,mpw,mname,memail);
+//		
+//		model.addAttribute("memberInfo", member); 
+//		
+////		model.addAttribute("id", mid);
+////		model.addAttribute("pw", mpw);
+////		model.addAttribute("name", mname);
+////		model.addAttribute("email", memail);
+//		
+//		return "joinOk";
+//	}
+	
+	@RequestMapping(value = "/joinOk")
+	public String joinCheck(MemberDto memberDto) {  //객체이름이 DTO 클래스의 이름과 동일해야함
+
+		return "joinOk";
+	}
 }
